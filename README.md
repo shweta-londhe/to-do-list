@@ -3,6 +3,12 @@ A simple and interactive To-Do List application built using HTML, CSS, and JavaS
 I created this project during my 1st year while learning the basics of web development.Now I'm practicing Git & GitHub workflows. 
 <br>
 <br>
+🔗 Live Demo
+<br>
+Check out the live version of the project here:<br>
+👉 https://shweta-londhe.github.io/to-do-list/ <br>
+<br>
+<br>
 📌 Features
 <br>
 -Add new tasks<br>

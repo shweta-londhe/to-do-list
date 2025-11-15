@@ -1,39 +1,74 @@
 <!DOCTYPE html>
-<html>
-	<head>
-        <!-- Content Type Meta tag -->
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
-        <!--Responsive Viewport Meta tag-->
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-        
-		<title>Todo list app</title>
-        
-		<!-- Roboto font embed -->
-		<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Beautiful To-Do List</title>
+    <meta name="description" content="A beautiful and intuitive to-do list app to organize your tasks">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-content">
+                <svg class="icon-large" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <h1 class="title">TaskFlow</h1>
+            </div>
+            <p class="subtitle">Organize your day, one task at a time</p>
+        </div>
 
-		<!-- Stylesheets -->
-		<link rel="stylesheet" type="text/css" href="resources/css/reset.min.css">
-		<link rel="stylesheet" type="text/css" href="resources/css/style.css">
-	</head>
-	<body>
+        <!-- Stats -->
+        <div class="stats">
+            <span class="badge badge-active">
+                <span id="activeCount">0</span> Active
+            </span>
+            <span class="badge badge-completed">
+                <span id="completedCount">0</span> Completed
+            </span>
+        </div>
 
-		<header>
-			<input type="text" placeholder="Enter an activity.." id="item">
-			<button id="add">
-				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve"><g><path class="fill" d="M16,8c0,0.5-0.5,1-1,1H9v6c0,0.5-0.5,1-1,1s-1-0.5-1-1V9H1C0.5,9,0,8.5,0,8s0.5-1,1-1h6V1c0-0.5,0.5-1,1-1s1,0.5,1,1v6h6C15.5,7,16,7.5,16,8z"/></g></svg>
-			</button>
-		</header>
+        <!-- Input Card -->
+        <div class="card input-card">
+            <div class="input-group">
+                <input 
+                    type="text" 
+                    id="todoInput" 
+                    class="input" 
+                    placeholder="What needs to be done?"
+                    autocomplete="off"
+                >
+                <button id="addButton" class="btn btn-add">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
 
-		<div class="container">
-			<!-- Uncompleted tasks -->
-			<ul class="todo" id="todo"></ul>
+        <!-- Filters -->
+        <div class="filters">
+            <button class="btn btn-filter active" data-filter="all">All</button>
+            <button class="btn btn-filter" data-filter="active">Active</button>
+            <button class="btn btn-filter" data-filter="completed">Completed</button>
+        </div>
 
-			<!-- Completed tasks -->
-			<ul class="todo" id="completed"></ul>
-		</div>
+        <!-- Todo List -->
+        <div id="todoList" class="todo-list"></div>
 
-		<!-- JavaScripts -->
-		<script src="resources/js/main.js"></script>
-	</body>
+        <!-- Empty State Template -->
+        <div id="emptyState" class="card empty-state" style="display: none;">
+            <p class="empty-text"></p>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="app.js"></script>
+</body>
 </html>

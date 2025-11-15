@@ -1,0 +1,320 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(to bottom right, #f8fafc, #f8fafc, #e0f2f1);
+    min-height: 100vh;
+    color: #4d3355;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+}
+
+/* Header Styles */
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: fadeInDown 0.5s ease-out;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.icon-large {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: #4db8c4;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #4db8c4, #5ec6d0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    color: #64748b;
+    font-size: 1.125rem;
+}
+
+/* Stats Badges */
+.stats {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    animation: fadeInDown 0.7s ease-out;
+}
+
+.badge {
+    padding: 0.5rem 1rem;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.badge-active {
+    background-color: #5ec6d0;
+    color: white;
+}
+
+.badge-completed {
+    background-color: white;
+    color: #334155;
+    border: 1px solid #e2e8f0;
+}
+
+/* Card Styles */
+.card {
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-card {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    animation: fadeInDown 0.9s ease-out;
+}
+
+.input-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input:focus {
+    border-color: #4db8c4;
+    box-shadow: 0 0 0 3px rgba(77, 184, 196, 0.1);
+}
+
+/* Button Styles */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+}
+
+.btn-add {
+    padding: 0.75rem;
+    background: linear-gradient(to right, #4db8c4, #5ec6d0);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-add:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    animation: fadeIn 1s ease-out;
+}
+
+.btn-filter {
+    background: white;
+    color: #334155;
+    border: 1px solid #e2e8f0;
+    text-transform: capitalize;
+}
+
+.btn-filter:hover {
+    background: #f8fafc;
+}
+
+.btn-filter.active {
+    background: #4db8c4;
+    color: white;
+    border-color: #4db8c4;
+}
+
+/* Todo List */
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.todo-item {
+    padding: 1rem;
+    animation: fadeInUp 0.3s ease-out;
+}
+
+.todo-item:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.todo-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.checkbox {
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 2px solid #4db8c4;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.todo-text {
+    flex: 1;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.todo-text.completed {
+    text-decoration: line-through;
+    color: #94a3b8;
+}
+
+.btn-delete {
+    padding: 0.5rem;
+    background: transparent;
+    color: #ef4444;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.btn-delete:hover {
+    background: rgba(239, 68, 68, 0.1);
+}
+
+/* Empty State */
+.empty-state {
+    padding: 2rem;
+    text-align: center;
+}
+
+.empty-text {
+    color: #94a3b8;
+    font-size: 1.125rem;
+}
+
+/* Toast Notifications */
+.toast-container {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+}
+
+.toast {
+    background: #1f2937;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin-top: 0.5rem;
+    animation: slideInRight 0.3s ease-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .title {
+        font-size: 2rem;
+    }
+    
+    .container {
+        padding: 2rem 1rem;
+    }
+    
+    .toast-container {
+        right: 1rem;
+        left: 1rem;
+    }
+}
